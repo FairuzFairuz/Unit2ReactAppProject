@@ -13,6 +13,7 @@ import StatisticsPageEngland from "./components/StatisticsPageEngland";
 import StatisticsPageSpain from "./components/StatisticsPageSpain";
 import StatisticsPageItaly from "./components/StatisticsPageItaly";
 import StatisticsPageGermany from "./components/StatisticsPageGermany";
+import NotFoundPage from "./components/NotFoundPage";
 
 const App = () => {
   return (
@@ -55,6 +56,7 @@ const App = () => {
           path="/statisticsGermany/:season"
           element={<StatisticsPageGermany />}
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
