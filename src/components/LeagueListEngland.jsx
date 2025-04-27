@@ -2,19 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import YearList from "./YearList";
 
-const LeagueList = () => {
+const LeagueListEngland = () => {
   const [leagues, setLeagues] = useState([]);
   const [selectedLeague, setSelectedLeague] = useState(null);
-  const [standings, setStandings] = useState([]);
+
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  // const leagueID = 39;
   // const apiKey = process.env.REACT_APP_API_KEY;
 
   const fetchLeagues = async () => {
     try {
       const response = await fetch(
-        "https://v3.football.api-sports.io/leagues?country=england",
+        "https://v3.football.api-sports.io/leagues?country=england&id=39",
         {
           method: "GET",
           headers: {
@@ -44,7 +43,7 @@ const LeagueList = () => {
   };
 
   const handleYearClick = (year) => {
-    navigate(`/standings/${year}`); // Redirect to the StandingsPage with the selected season
+    navigate(`/standingsEngland/${year}`); // Redirect to the StandingsPageSpain with the selected season
   };
 
   const handleHomeClick = () => {
@@ -77,4 +76,4 @@ const LeagueList = () => {
   );
 };
 
-export default LeagueList;
+export default LeagueListEngland;

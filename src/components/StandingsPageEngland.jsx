@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const StandingsPage = () => {
+const StandingsPageEngland = () => {
   const { season } = useParams(); // Extract season from route parameters
   const [standings, setStandings] = useState([]);
   const [error, setError] = useState(null);
@@ -39,7 +39,7 @@ const StandingsPage = () => {
 
   return (
     <div>
-      <h1>Standings for Season {season}</h1>
+      <h1>Standings for Season {season} - Premier League</h1>
       <button onClick={() => navigate("/")}>Home</button>
       {error ? (
         <p>{error}</p>
@@ -93,4 +93,4 @@ const StandingsPage = () => {
   );
 };
 
-export default StandingsPage;
+export default StandingsPageEngland;
