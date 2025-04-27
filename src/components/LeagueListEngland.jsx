@@ -43,7 +43,7 @@ const LeagueListEngland = () => {
   };
 
   const handleYearClick = (year) => {
-    navigate(`/standingsEngland/${year}`); // Redirect to the StandingsPageSpain with the selected season
+    navigate(`/standingsEngland/${year}`); // Redirect to the StandingsPageEngland with the selected season
   };
 
   const handleHomeClick = () => {

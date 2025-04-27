@@ -37,10 +37,17 @@ const StandingsPageGermany = () => {
     fetchStandings();
   }, [season]);
 
+  const navigateToStatistics = () => {
+    navigate(`/statisticsGermany/${season}`); // Navigate to statistics page
+  };
+
   return (
     <div>
       <h1>Standings for Season {season} - Bundesliga</h1>
-      <button onClick={() => navigate("/")}>Home</button>
+      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+        <button onClick={() => navigate("/")}>Home</button>
+        <button onClick={navigateToStatistics}>Statistics</button>{" "}
+      </div>
       {error ? (
         <p>{error}</p>
       ) : standings.length === 0 ? (

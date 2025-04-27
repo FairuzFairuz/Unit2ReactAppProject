@@ -1,0 +1,89 @@
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+const StatisticsPageSpain = () => {
+  const { season } = useParams(); // Extract season from route parameters
+  // const { state } = useLocation(); // Retrieve leagueID from navigation state
+  const leagueID = 140; // Access leagueID passed from the previous page
+  const [statistics, setStatistics] = useState([]); // State to store statistics data
+  const [error, setError] = useState(null); // State to handle errors
+  const [loading, setLoading] = useState(true); // State to handle loading state
+  const navigate = useNavigate();
+
+  const fetchStatistics = async () => {
+    try {
+      const response = await fetch(
+        `https://v3.football.api-sports.io/players/topscorers?season=${season}&league=${leagueID}`,
+        {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad", // Replace with your API key
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log("Statistics Data:", data.response);
+      setStatistics(data.response); // Update the state with fetched data
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching statistics:", error);
+      setError("Failed to fetch statistics.");
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchStatistics();
+  }, [season, leagueID]);
+
+  if (loading) {
+    return <p>Loading statistics...</p>; // Display loading message while data is being fetched
+  }
+
+  if (error) {
+    return <p>{error}</p>; // Display error message if there is an issue
+  }
+
+  const handleHomeClick = () => {
+    navigate("/");
+  };
+  return (
+    <div>
+      <h1>Statistics for Season {season}</h1>
+      <h2>La Liga</h2>
+      <button onClick={handleHomeClick}>Home</button>
+      {statistics.length === 0 ? (
+        <p>No statistics available.</p>
+      ) : (
+        <table border="1" style={{ borderCollapse: "collapse", width: "100%" }}>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Team</th>
+              <th>Goals</th>
+              <th>Matches</th>
+              <th>Assists</th>
+            </tr>
+          </thead>
+          <tbody>
+            {statistics.map((player) => (
+              <tr key={player.player.id}>
+                <td>{player.player.name}</td>
+                <td>{player.statistics[0]?.team?.name}</td>
+                <td>{player.statistics[0]?.goals?.total || 0}</td>
+                <td>{player.statistics[0]?.games?.appearences || 0}</td>
+                <td>{player.statistics[0]?.goals?.assists || 0}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
+};
+
+export default StatisticsPageSpain;

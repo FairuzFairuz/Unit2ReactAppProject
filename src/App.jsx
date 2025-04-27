@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LeagueListEngland from "./components/LeagueListEngland"; // Update the import path if necessary
+import LeagueListEngland from "./components/LeagueListEngland";
 import LeagueListSpain from "./components/LeagueListSpain";
 import HomePage from "./components/HomePage";
 import StandingsPageEngland from "./components/StandingsPageEngland";
@@ -9,6 +9,10 @@ import StandingsPageItaly from "./components/StandingsPageItaly";
 import LeagueListItaly from "./components/LeagueListItaly";
 import StandingsPageGermany from "./components/StandingsPageGermany";
 import LeagueListGermany from "./components/LeagueListGermany";
+import StatisticsPageEngland from "./components/StatisticsPageEngland";
+import StatisticsPageSpain from "./components/StatisticsPageSpain";
+import StatisticsPageItaly from "./components/StatisticsPageItaly";
+import StatisticsPageGermany from "./components/StatisticsPageGermany";
 
 const App = () => {
   return (
@@ -34,6 +38,22 @@ const App = () => {
         <Route
           path="/standingsGermany/:season"
           element={<StandingsPageGermany />}
+        />
+        <Route
+          path="/statisticsEngland/:season"
+          element={<StatisticsPageEngland />}
+        />
+        <Route
+          path="/statisticsSpain/:season"
+          element={<StatisticsPageSpain />}
+        />
+        <Route
+          path="/statisticsItaly/:season"
+          element={<StatisticsPageItaly />}
+        />
+        <Route
+          path="/statisticsGermany/:season"
+          element={<StatisticsPageGermany />}
         />
       </Routes>
     </Router>
