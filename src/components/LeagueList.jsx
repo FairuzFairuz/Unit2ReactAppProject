@@ -32,36 +32,6 @@ const LeagueList = () => {
     }
   };
 
-  // const fetchStandings = async (season) => {
-  //   if (!season || season.toString().length !== 4) {
-  //     console.error("Invalid season:", season);
-  //     setError("Invalid season selected.");
-  //     return;
-  //   }
-
-  //   try {
-  //     const response = await fetch(
-  //       `https://v3.football.api-sports.io/standings?league=${leagueID}&season=${season}`,
-  //       {
-  //         method: "GET",
-  //         headers: {
-  //           "x-rapidapi-host": "v3.football.api-sports.io",
-  //           "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad",
-  //         },
-  //       }
-  //     );
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP error! Status: ${response.status}`);
-  //     }
-  //     const data = await response.json();
-  //     console.log("Standings Data:", data.response[0]?.league?.standings); // Debug the standings structure
-  //     setStandings(data.response[0]?.league?.standings[0] || []);
-  //   } catch (error) {
-  //     console.error("Error fetching standings:", error);
-  //     setError("Failed to fetch standings.");
-  //   }
-  // };
-
   useEffect(() => {
     fetchLeagues();
   }, []);
