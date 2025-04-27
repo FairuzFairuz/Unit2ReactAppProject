@@ -7,6 +7,7 @@ const StandingsPage = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const leagueID = 39; // League ID for the Premier League
+  // const apiKey = process.env.REACT_APP_API_KEY;
 
   const fetchStandings = async () => {
     try {
@@ -16,7 +17,7 @@ const StandingsPage = () => {
           method: "GET",
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad", // Replace with your actual API key
+            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad",
           },
         }
       );
@@ -45,107 +46,48 @@ const StandingsPage = () => {
       ) : standings.length === 0 ? (
         <p>Loading standings...</p>
       ) : (
-        <ul>
-          {standings.map((team, index) => (
-            <li key={team.team.id}>
-              <img
-                src={team.team.logo}
-                alt={`${team.team.name} logo`}
-                style={{ width: "50px", height: "50px" }}
-              />
-              <p>
-                <strong>Rank:</strong> {team.rank}
-              </p>
-              <p>
-                <strong>Team:</strong> {team.team.name}
-              </p>
-              <p>
-                <strong>Points:</strong> {team.points}
-              </p>
-              <p>
-                <strong>Goal Difference:</strong> {team.goalsDiff}
-              </p>
-              <p>
-                <strong>Group:</strong> {team.group}
-              </p>
-              <p>
-                <strong>Form:</strong> {team.form}
-              </p>
-              <p>
-                <strong>Status:</strong> {team.status}
-              </p>
-              <p>
-                <strong>Description:</strong> {team.description}
-              </p>
-              <div>
-                <h4>Overall</h4>
-                <p>
-                  <strong>Played:</strong> {team.all.played}
-                </p>
-                <p>
-                  <strong>Wins:</strong> {team.all.win}
-                </p>
-                <p>
-                  <strong>Draws:</strong> {team.all.draw}
-                </p>
-                <p>
-                  <strong>Losses:</strong> {team.all.lose}
-                </p>
-                <p>
-                  <strong>Goals For:</strong> {team.all.goals.for}
-                </p>
-                <p>
-                  <strong>Goals Against:</strong> {team.all.goals.against}
-                </p>
-              </div>
-              <div>
-                <h4>Home</h4>
-                <p>
-                  <strong>Played:</strong> {team.home.played}
-                </p>
-                <p>
-                  <strong>Wins:</strong> {team.home.win}
-                </p>
-                <p>
-                  <strong>Draws:</strong> {team.home.draw}
-                </p>
-                <p>
-                  <strong>Losses:</strong> {team.home.lose}
-                </p>
-                <p>
-                  <strong>Goals For:</strong> {team.home.goals.for}
-                </p>
-                <p>
-                  <strong>Goals Against:</strong> {team.home.goals.against}
-                </p>
-              </div>
-              <div>
-                <h4>Away</h4>
-                <p>
-                  <strong>Played:</strong> {team.away.played}
-                </p>
-                <p>
-                  <strong>Wins:</strong> {team.away.win}
-                </p>
-                <p>
-                  <strong>Draws:</strong> {team.away.draw}
-                </p>
-                <p>
-                  <strong>Losses:</strong> {team.away.lose}
-                </p>
-                <p>
-                  <strong>Goals For:</strong> {team.away.goals.for}
-                </p>
-                <p>
-                  <strong>Goals Against:</strong> {team.away.goals.against}
-                </p>
-              </div>
-              <p>
-                <strong>Last Updated:</strong> {team.update}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <table border="1" style={{ borderCollapse: "collapse", width: "100%" }}>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Logo</th>
+              <th>Points</th>
+              <th>Goal Difference</th>
+              <th>Form</th>
+              <th>Played</th>
+              <th>Wins</th>
+              <th>Draws</th>
+              <th>Losses</th>
+              <th>Goals For</th>
+              <th>Goals Against</th>
+            </tr>
+          </thead>
+          <tbody>
+            {standings.map((team) => (
+              <tr key={team.team.id}>
+                <td>{team.rank}</td>
+                <td>{team.team.name}</td>
+                <td>
+                  <img
+                    src={team.team.logo}
+                    alt={`${team.team.name} logo`}
+                    style={{ width: "40px", height: "40px" }}
+                  />
+                </td>
+                <td>{team.points}</td>
+                <td>{team.goalsDiff}</td>
+                <td>{team.form}</td>
+                <td>{team.all.played}</td>
+                <td>{team.all.win}</td>
+                <td>{team.all.draw}</td>
+                <td>{team.all.lose}</td>
+                <td>{team.all.goals.for}</td>
+                <td>{team.all.goals.against}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );

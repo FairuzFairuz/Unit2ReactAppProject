@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import YearList from "./YearList";
 
 const LeagueList = () => {
   const [leagues, setLeagues] = useState([]);
@@ -7,7 +8,8 @@ const LeagueList = () => {
   const [standings, setStandings] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const leagueID = 39;
+  // const leagueID = 39;
+  // const apiKey = process.env.REACT_APP_API_KEY;
 
   const fetchLeagues = async () => {
     try {
@@ -65,33 +67,12 @@ const LeagueList = () => {
                 {league.league.name}
               </button>
               {selectedLeague === league.league.id && (
-                <ul>
-                  {[2021, 2022, 2023].map((year) => (
-                    <li key={year}>
-                      <button onClick={() => handleYearClick(year)}>
-                        {year}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+                <YearList onYearSelect={handleYearClick} />
               )}
             </li>
           ))}
         </ul>
       )}
-      {standings.length > 0 && (
-        <div>
-          <h2>Standings</h2>
-          <ul>
-            {standings.map((team) => (
-              <li key={team.team.id}>
-                {team.team.name}: {team.points} points
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {standings.length === 0 && !error && <p>No standings available.</p>}
     </div>
   );
 };
