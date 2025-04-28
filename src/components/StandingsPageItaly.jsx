@@ -6,8 +6,7 @@ const StandingsPageItaly = () => {
   const [standings, setStandings] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const leagueID = 135; // League ID for the Premier League
-  // const apiKey = process.env.REACT_APP_API_KEY;
+  const leagueID = 135; // League ID for the Serie A
 
   const fetchStandings = async () => {
     try {
@@ -53,7 +52,7 @@ const StandingsPageItaly = () => {
       ) : standings.length === 0 ? (
         <p>Loading standings...</p>
       ) : (
-        <table border="1" style={{ borderCollapse: "collapse", width: "100%" }}>
+        <table border="1" style={{ width: "100%" }}>
           <thead>
             <tr>
               <th>Rank</th>

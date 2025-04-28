@@ -53,7 +53,7 @@ const StandingsPageEngland = () => {
       ) : standings.length === 0 ? (
         <p>Loading standings...</p>
       ) : (
-        <table border="1" style={{ borderCollapse: "collapse", width: "100%" }}>
+        <table border="1" style={{ width: "100%" }}>
           <thead>
             <tr>
               <th>Rank</th>

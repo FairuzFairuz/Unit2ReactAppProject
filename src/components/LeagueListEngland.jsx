@@ -8,6 +8,7 @@ const LeagueListEngland = () => {
 
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const leagueID = 39;
 
   const fetchLeagues = async () => {
     try {

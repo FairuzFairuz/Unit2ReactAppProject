@@ -8,7 +8,7 @@ const LeagueListItaly = () => {
 
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  // const apiKey = process.env.REACT_APP_API_KEY;
+  const leagueID = 135;
 
   const fetchLeagues = async () => {
     try {

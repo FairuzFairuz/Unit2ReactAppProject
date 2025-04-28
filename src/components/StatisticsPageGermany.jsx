@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const StatisticsPageGermany = () => {
   const { season } = useParams(); // Extract season from route parameters
-  // const { state } = useLocation(); // Retrieve leagueID from navigation state
   const leagueID = 78; // Access leagueID passed from the previous page
   const [statistics, setStatistics] = useState([]); // State to store statistics data
   const [error, setError] = useState(null); // State to handle errors
@@ -18,7 +17,7 @@ const StatisticsPageGermany = () => {
           method: "GET",
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad", // Replace with your API key
+            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad",
           },
         }
       );

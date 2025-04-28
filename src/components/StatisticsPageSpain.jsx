@@ -3,8 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const StatisticsPageSpain = () => {
   const { season } = useParams(); // Extract season from route parameters
-  // const { state } = useLocation(); // Retrieve leagueID from navigation state
-  const leagueID = 140; // Access leagueID passed from the previous page
+  const leagueID = 140; // Define leagueID based on ID in API
   const [statistics, setStatistics] = useState([]); // State to store statistics data
   const [error, setError] = useState(null); // State to handle errors
   const [loading, setLoading] = useState(true); // State to handle loading state
