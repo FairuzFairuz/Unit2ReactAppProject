@@ -13,7 +13,7 @@ const LeagueListGermany = () => {
   const fetchLeagues = async () => {
     try {
       const response = await fetch(
-        "https://v3.football.api-sports.io/leagues?country=germany&id=78",
+        `https://v3.football.api-sports.io/leagues?country=germany&id=${leagueID}`,
         {
           method: "GET",
           headers: {
