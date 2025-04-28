@@ -51,11 +51,18 @@ const StatisticsPageSpain = () => {
   const handleHomeClick = () => {
     navigate("/");
   };
+
+  const handleStandingsClick = () => {
+    navigate(`/standingsSpain/${season}`);
+  };
   return (
     <div>
       <h1>Statistics for Season {season}</h1>
       <h2>La Liga</h2>
-      <button onClick={handleHomeClick}>Home</button>
+      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+        <button onClick={handleHomeClick}>Home</button>
+        <button onClick={handleStandingsClick}>Standings</button>
+      </div>
       {statistics.length === 0 ? (
         <p>No statistics available.</p>
       ) : (

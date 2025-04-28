@@ -7,7 +7,6 @@ const StandingsPageEngland = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const leagueID = 39; // League ID for the Premier League
-  // const apiKey = process.env.REACT_APP_API_KEY;
 
   const fetchStandings = async () => {
     try {
