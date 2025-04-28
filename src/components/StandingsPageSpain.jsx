@@ -42,7 +42,8 @@ const StandingsPageSpain = () => {
   };
   return (
     <div>
-      <h1>Standings for Season {season} - La Liga</h1>
+      <h1>Standings for Season {season}</h1>
+      <h2>La Liga</h2>
       <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
         <button onClick={() => navigate("/")}>Home</button>
         <button onClick={navigateToStatistics}>Statistics</button>{" "}

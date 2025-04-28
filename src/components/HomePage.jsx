@@ -22,8 +22,8 @@ const HomePage = () => {
   };
   return (
     <div>
-      <h1>The Big Four of Europe</h1>
-      <h2>Click to find out more</h2>
+      <h1>Big Four of Europe</h1>
+      <h2>Football's best four leagues in Europe</h2>
       <div className="container">
         <button onClick={handleNavigateEngland}>England</button>
         <button onClick={handleNavigateSpain}>Spain</button>
