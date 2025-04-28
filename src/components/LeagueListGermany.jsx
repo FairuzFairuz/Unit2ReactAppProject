@@ -39,7 +39,6 @@ const LeagueListGermany = () => {
 
   const handleLeagueClick = (leagueId) => {
     setSelectedLeague(leagueId === selectedLeague ? null : leagueId);
-    setStandings([]); // Clear standings when toggling a league
   };
 
   const handleYearClick = (year) => {

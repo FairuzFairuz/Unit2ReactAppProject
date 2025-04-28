@@ -8,7 +8,6 @@ const LeagueListEngland = () => {
 
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  // const apiKey = process.env.REACT_APP_API_KEY;
 
   const fetchLeagues = async () => {
     try {
@@ -19,6 +18,7 @@ const LeagueListEngland = () => {
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
             "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad",
+            // "x-rapidapi-key": process.env.REACT_APP_API_KEY,
           },
         }
       );
@@ -39,7 +39,6 @@ const LeagueListEngland = () => {
 
   const handleLeagueClick = (leagueId) => {
     setSelectedLeague(leagueId === selectedLeague ? null : leagueId);
-    setStandings([]); // Clear standings when toggling a league
   };
 
   const handleYearClick = (year) => {
