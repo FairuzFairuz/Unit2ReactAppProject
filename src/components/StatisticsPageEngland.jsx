@@ -66,7 +66,7 @@ const StatisticsPageEngland = () => {
       {statistics.length === 0 ? (
         <p>No statistics available.</p>
       ) : (
-        <table border="1" style={{ borderCollapse: "collapse", width: "100%" }}>
+        <table border="1" style={{ width: "100%" }}>
           <thead>
             <tr>
               <th>Player</th>
