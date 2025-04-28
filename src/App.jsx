@@ -14,6 +14,7 @@ import StatisticsPageSpain from "./components/StatisticsPageSpain";
 import StatisticsPageItaly from "./components/StatisticsPageItaly";
 import StatisticsPageGermany from "./components/StatisticsPageGermany";
 import NotFoundPage from "./components/NotFoundPage";
+import AddFavourite from "./components/AddFavourite";
 
 const App = () => {
   return (
@@ -56,6 +57,7 @@ const App = () => {
           path="/statisticsGermany/:season"
           element={<StatisticsPageGermany />}
         />
+        <Route path="/addFavourite" element={<AddFavourite />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
