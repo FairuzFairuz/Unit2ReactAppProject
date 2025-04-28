@@ -58,7 +58,7 @@ const StatisticsPageSpain = () => {
   return (
     <div>
       <h1>Statistics for Season {season}</h1>
-      <h2>La Liga</h2>
+      <h2>Top Scorers</h2>
       <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
         <button onClick={handleHomeClick}>Home</button>
         <button onClick={handleStandingsClick}>Standings</button>
