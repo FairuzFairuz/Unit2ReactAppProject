@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import AddFavourite from "./AddFavourite";
 
 const HomePage = () => {
   const navigate = useNavigate();

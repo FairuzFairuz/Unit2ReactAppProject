@@ -59,6 +59,16 @@ const LeagueListItaly = () => {
           {leagues.map((league) => (
             <li key={league.league.id}>
               <button onClick={() => handleLeagueClick(league.league.id)}>
+                <img
+                  src={`https://media.api-sports.io/football/leagues/${league.league.id}.png`}
+                  alt={`${league.league.name} logo`}
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    objectFit: "contain",
+                  }}
+                />
+                <br />
                 {league.league.name}
               </button>
               {selectedLeague === league.league.id && (
