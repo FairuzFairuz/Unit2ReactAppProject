@@ -48,7 +48,6 @@ const AddFavourite = () => {
   };
   return (
     <div>
-      <h2>Add Favourite</h2>
       <div>
         <input
           type="text"
