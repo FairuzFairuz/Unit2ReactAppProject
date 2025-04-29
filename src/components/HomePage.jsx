@@ -36,7 +36,15 @@ const HomePage = () => {
         <button onClick={handleNavigateGermany}>Germany</button>
       </div>
       <div
-        style={{ margin: "20px", padding: "20px", border: "1px solid #ccc" }}
+        style={{
+          margin: "20px",
+          padding: "20px",
+          border: "1px solid",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center", // Centers horizontally
+          justifyContent: "center", // Centers vertically
+        }}
       >
         <h2>Who is your favourite player? Who is your GOAT?</h2>
         <button onClick={handleNavigateAddFavourite}>

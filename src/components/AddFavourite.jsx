@@ -48,13 +48,26 @@ const AddFavourite = () => {
     setYourGOAT("");
   };
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <div>
         <input
           type="text"
           placeholder="Enter your name"
           value={yourName}
           onChange={(e) => setYourName(e.target.value)}
+          style={{
+            width: "400px", // Sets the width
+            height: "40px", // Sets the height
+            padding: "10px", // Adds inner spacing
+            fontSize: "16px", // Adjusts font size
+          }}
         />
       </div>
       <div>
@@ -63,6 +76,12 @@ const AddFavourite = () => {
           placeholder="Enter your favourite player"
           value={yourFavouritePlayer}
           onChange={(e) => setYourFavouritePlayer(e.target.value)}
+          style={{
+            width: "400px", // Sets the width
+            height: "40px", // Sets the height
+            padding: "10px", // Adds inner spacing
+            fontSize: "16px", // Adjusts font size
+          }}
         />
       </div>
       <div>
@@ -70,6 +89,12 @@ const AddFavourite = () => {
           placeholder="Enter your GOAT"
           value={yourGOAT}
           onChange={(e) => setYourGOAT(e.target.value)}
+          style={{
+            width: "400px", // Sets the width
+            height: "40px", // Sets the height
+            padding: "10px", // Adds inner spacing
+            fontSize: "16px", // Adjusts font size
+          }}
         />
       </div>
       <button onClick={handleSubmit}>Share</button>
