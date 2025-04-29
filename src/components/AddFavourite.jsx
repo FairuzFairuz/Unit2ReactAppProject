@@ -63,10 +63,10 @@ const AddFavourite = () => {
           value={yourName}
           onChange={(e) => setYourName(e.target.value)}
           style={{
-            width: "400px", // Sets the width
-            height: "40px", // Sets the height
-            padding: "10px", // Adds inner spacing
-            fontSize: "16px", // Adjusts font size
+            width: "400px",
+            height: "40px",
+            padding: "10px",
+            fontSize: "16px",
           }}
         />
       </div>
@@ -77,10 +77,10 @@ const AddFavourite = () => {
           value={yourFavouritePlayer}
           onChange={(e) => setYourFavouritePlayer(e.target.value)}
           style={{
-            width: "400px", // Sets the width
-            height: "40px", // Sets the height
-            padding: "10px", // Adds inner spacing
-            fontSize: "16px", // Adjusts font size
+            width: "400px",
+            height: "40px",
+            padding: "10px",
+            fontSize: "16px",
           }}
         />
       </div>
@@ -90,10 +90,10 @@ const AddFavourite = () => {
           value={yourGOAT}
           onChange={(e) => setYourGOAT(e.target.value)}
           style={{
-            width: "400px", // Sets the width
-            height: "40px", // Sets the height
-            padding: "10px", // Adds inner spacing
-            fontSize: "16px", // Adjusts font size
+            width: "400px",
+            height: "40px",
+            padding: "10px",
+            fontSize: "16px",
           }}
         />
       </div>

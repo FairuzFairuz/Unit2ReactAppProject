@@ -43,7 +43,7 @@ const LeagueListItaly = () => {
   };
 
   const handleYearClick = (year) => {
-    navigate(`/standingsItaly/${year}`); // Redirect to the StandingsPageSpain with the selected season
+    navigate(`/standingsItaly/${year}`);
   };
 
   return (
