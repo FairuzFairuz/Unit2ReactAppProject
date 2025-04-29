@@ -38,7 +38,7 @@ const StatisticsPageItaly = () => {
 
   useEffect(() => {
     fetchStatistics();
-  }, [season, leagueID]);
+  }, []);
 
   if (loading) {
     return <p>Loading statistics...</p>; // Display loading message while data is being fetched

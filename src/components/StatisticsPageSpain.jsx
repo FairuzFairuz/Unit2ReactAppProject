@@ -38,7 +38,7 @@ const StatisticsPageSpain = () => {
 
   useEffect(() => {
     fetchStatistics();
-  }, [season, leagueID]);
+  }, []);
 
   if (loading) {
     return <p>Loading statistics...</p>; // Display loading message while data is being fetched
@@ -47,10 +47,6 @@ const StatisticsPageSpain = () => {
   if (error) {
     return <p>{error}</p>; // Display error message if there is an issue
   }
-
-  const handleHomeClick = () => {
-    navigate("/");
-  };
 
   const handleStandingsClick = () => {
     navigate(`/standingsSpain/${season}`);

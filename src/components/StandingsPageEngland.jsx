@@ -34,7 +34,7 @@ const StandingsPageEngland = () => {
 
   useEffect(() => {
     fetchStandings();
-  }, [season]);
+  }, []);
 
   const navigateToStatistics = () => {
     navigate(`/statisticsEngland/${season}`); // Navigate to statistics page
