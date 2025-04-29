@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
-const HomePage = () => {
+const HomePage = ({ isDarkMode, toggleTheme }) => {
   const navigate = useNavigate();
 
   const handleNavigateEngland = () => {
@@ -28,6 +28,14 @@ const HomePage = () => {
     <div>
       <h1>Big Four of Europe</h1>
       <h2>Football's top four leagues in Europe</h2>
+      <p>
+        The current theme is{" "}
+        <strong>{isDarkMode ? "Dark Mode" : "Light Mode"}</strong>.
+      </p>
+      <button onClick={toggleTheme}>
+        Switch to {isDarkMode ? "Light Mode" : "Dark Mode"}
+      </button>
+
       <div className="container">
         <button onClick={handleNavigateEngland}>England</button>
         <button onClick={handleNavigateSpain}>Spain</button>

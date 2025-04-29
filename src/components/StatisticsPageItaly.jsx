@@ -48,6 +48,10 @@ const StatisticsPageItaly = () => {
     return <p>{error}</p>; // Display error message if there is an issue
   }
 
+  const handleHomeClick = () => {
+    navigate("/");
+  };
+
   const handleStandingsClick = () => {
     navigate(`/standingsItaly/${season}`);
   };

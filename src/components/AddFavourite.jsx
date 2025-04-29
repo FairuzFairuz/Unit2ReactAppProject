@@ -98,6 +98,7 @@ const AddFavourite = () => {
         />
       </div>
       <button onClick={handleSubmit}>Share</button>
+
       <Navbar />
     </div>
   );
