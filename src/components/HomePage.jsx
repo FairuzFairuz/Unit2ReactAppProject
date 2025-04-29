@@ -22,6 +22,9 @@ const HomePage = () => {
     navigate("/leaguesGermany");
   };
 
+  const handleNavigateAddFavourite = () => {
+    navigate("/addFavourite");
+  };
   return (
     <div>
       <h1>Big Four of Europe</h1>
@@ -35,8 +38,10 @@ const HomePage = () => {
       <div
         style={{ margin: "20px", padding: "20px", border: "1px solid #ccc" }}
       >
-        <h2>Add your favourite player, team or league below</h2>
-        <AddFavourite />
+        <h2>Who is your favourite player? Who is your GOAT?</h2>
+        <button onClick={handleNavigateAddFavourite}>
+          Let's hear from you!
+        </button>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Navbar from "./NavBar";
 
 const StandingsPageEngland = () => {
   const { season } = useParams(); // Extract season from route parameters
@@ -44,8 +45,8 @@ const StandingsPageEngland = () => {
     <div>
       <h1>Standings for Season {season}</h1>
       <h2>Premier League</h2>
-      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-        <button onClick={() => navigate("/")}>Home</button>
+      <div>
+        <Navbar />
         <button onClick={navigateToStatistics}>Statistics</button>{" "}
       </div>
       {error ? (

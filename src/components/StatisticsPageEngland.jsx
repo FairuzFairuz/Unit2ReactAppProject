@@ -1,6 +1,7 @@
 //to fetch data on top scorers, top assists
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Navbar from "./NavBar";
 
 const StatisticsPageEngland = () => {
   const { season } = useParams(); // Extract season from route parameters
@@ -48,10 +49,6 @@ const StatisticsPageEngland = () => {
     return <p>{error}</p>; // Display error message if there is an issue
   }
 
-  const handleHomeClick = () => {
-    navigate("/");
-  };
-
   const handleStandingsClick = () => {
     navigate(`/standingsEngland/${season}`);
   };
@@ -59,8 +56,8 @@ const StatisticsPageEngland = () => {
     <div>
       <h1>Statistics for Season {season}</h1>
       <h2>Top Scorers</h2>
-      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-        <button onClick={handleHomeClick}>Home</button>
+      <div>
+        <Navbar />
         <button onClick={handleStandingsClick}>Standings</button>
       </div>
       {statistics.length === 0 ? (

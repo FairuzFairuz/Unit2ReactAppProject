@@ -1,2 +1,14 @@
-// create a navbar and display on every page
-// navbar should contain buttons to route to different leagues/country
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+const Navbar = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <button onClick={() => navigate("/")}>Home</button>
+    </div>
+  );
+};
+
+export default Navbar;

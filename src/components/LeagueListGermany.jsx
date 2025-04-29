@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import YearList from "./YearList";
+import Navbar from "./NavBar";
 
 const LeagueListGermany = () => {
   const [leagues, setLeagues] = useState([]);
@@ -45,14 +46,10 @@ const LeagueListGermany = () => {
     navigate(`/standingsGermany/${year}`); // Redirect to the StandingsPageSpain with the selected season
   };
 
-  const handleHomeClick = () => {
-    navigate("/");
-  };
-
   return (
     <div>
       <h1>Available Leagues</h1>
-      <button onClick={handleHomeClick}>Home</button>
+      <Navbar />
       {error ? (
         <p>{error}</p>
       ) : leagues.length === 0 ? (
