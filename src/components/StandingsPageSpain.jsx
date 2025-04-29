@@ -25,7 +25,6 @@ const StandingsPageSpain = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Standings Data:", data.response[0]?.league?.standings[0]);
       setStandings(data.response[0]?.league?.standings[0] || []);
     } catch (error) {
       console.error("Error fetching standings:", error);
