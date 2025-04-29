@@ -7,7 +7,7 @@ const StatisticsPageEngland = () => {
   const leagueID = 39; // Define leagueID based on ID in API
   const [statistics, setStatistics] = useState([]); // State to store statistics data
   const [error, setError] = useState(null); // State to handle errors
-  const [loading, setLoading] = useState(true); // State to handle loading state
+
   const navigate = useNavigate();
 
   const fetchStatistics = async () => {
@@ -26,23 +26,16 @@ const StatisticsPageEngland = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Statistics Data:", data.response);
       setStatistics(data.response); // Update the state with fetched data
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching statistics:", error);
       setError("Failed to fetch statistics.");
-      setLoading(false);
     }
   };
 
   useEffect(() => {
     fetchStatistics();
   }, []);
-
-  if (loading) {
-    return <p>Loading statistics...</p>; // Display loading message while data is being fetched
-  }
 
   if (error) {
     return <p>{error}</p>; // Display error message if there is an issue
@@ -60,7 +53,7 @@ const StatisticsPageEngland = () => {
         <button onClick={handleStandingsClick}>Standings</button>
       </div>
       {statistics.length === 0 ? (
-        <p>No statistics available.</p>
+        <p>Loading Statistics</p>
       ) : (
         <table border="1" style={{ width: "100%" }}>
           <thead>
