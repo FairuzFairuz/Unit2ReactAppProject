@@ -1,6 +1,6 @@
 App Name: Big Four of Europe
 
-Background Information: The content of this app is mainly based on the major football leagues of the "Big Four". The "Big Four" is often described as the 4 best football countries in Europe, namely England, Italy, Spain and Germany. As an avid football fan myself, I wanted to create an app using data fetched from an API based on information and data that I am highly comfortable with, hence I decided to go for a football theme app. The API that I am using to pull data from is called API-Football. Since football is known world-wide, this API contains data from almost alk the countries and leagues around the world. Therefore, during the process of building this app and fetching data, I paid close attention the four countries mentioned above, and specifically to their respective major league which are Premier League, Serie A, Bundesliga and La Liga.
+Background Information: The content of this app is mainly based on the major football leagues of the "Big Four". The "Big Four" is often described as the 4 best football countries in Europe, namely England, Italy, Spain and Germany. As an avid football fan myself, I wanted to create an app using data fetched from an API based on information and data that I am highly comfortable with, hence I decided to go for a football theme app. The API that I am using to pull data from is called API-Football. Since football is known world-wide, this API contains data from almost all the countries and leagues around the world. Therefore, during the process of building this app and fetching data, I paid close attention to the four countries mentioned above, and specifically to their respective major league which are Premier League, Serie A, Bundesliga and La Liga.
 
 The files of the app can be accessed through the following github url:
 https://github.com/FairuzFairuz/Unit2ReactAppProject.git
@@ -31,17 +31,7 @@ Screenshot of StatisticsPage of App:
 
 Hierachy of App:
 
-App.jsx
-├── HomePage.jsx
-│ ├── Navbar.jsx
-│ ├── LeagueListEngland.jsx
-│ │ ├── YearList.jsx
-│ │ ├── StandingsPageEngland.jsx
-│ │ ├── StatisticsPageEngland.jsx
-│ └── Similar league pages: Spain, Italy, Germany
-├── AddFavourite.jsx
-│ └── Navbar.jsx
-├── NotFoundPage.jsx
+![alt text](image-4.png)
 
 .env keys:
 API key: bb9f4deed51b4d66a5a0dfe84fc072ad
