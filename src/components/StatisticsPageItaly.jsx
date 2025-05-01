@@ -17,7 +17,7 @@ const StatisticsPageItaly = () => {
           method: "GET",
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad",
+            "x-rapidapi-key": "REPLACE WITH ACTUAL API KEY",
           },
         }
       );

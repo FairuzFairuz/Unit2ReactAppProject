@@ -12,7 +12,8 @@ const AddFavourite = () => {
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          Authorization: `Bearer patwezA0qulTsaQDt.9cd387f718bf4407daa5b030f7eea02db163ae5499f7f7fc263fc7c146425e16`,
+          Authorization: `Bearer REPLACE_WITH_ACTUAL_AIRTABLE_KEY`,
+          // importing from .env does not work, so i had to hardcode the API keys into the codeblock instead.
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

@@ -10,6 +10,7 @@ const LeagueListEngland = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const leagueID = 39;
+  // const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
 
   const fetchLeagues = async () => {
     try {
@@ -19,8 +20,10 @@ const LeagueListEngland = () => {
           method: "GET",
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad",
-            // "x-rapidapi-key": import.meta.env.VITE_REACT_APP_API_KEY,
+            "x-rapidapi-key": "REPLACE WITH ACTUAL API KEY",
+            // importing from .env does not work, so i had to hardcode the API keys into the codeblock instead.
+            // "x-rapidapi-key": apiKey,
+            // "x-rapidapi-key": import.meta.env.VITE_REACT_APP_API_KEY;
           },
         }
       );

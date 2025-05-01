@@ -19,7 +19,7 @@ const LeagueListItaly = () => {
           method: "GET",
           headers: {
             "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "bb9f4deed51b4d66a5a0dfe84fc072ad",
+            "x-rapidapi-key": "REPLACE WITH ACTUAL API KEY",
           },
         }
       );
@@ -43,7 +43,7 @@ const LeagueListItaly = () => {
   };
 
   const handleYearClick = (year) => {
-    navigate(`/standingsItaly/${year}`); // Redirect to the StandingsPageSpain with the selected season
+    navigate(`/standingsItaly/${year}`);
   };
 
   return (
@@ -59,6 +59,16 @@ const LeagueListItaly = () => {
           {leagues.map((league) => (
             <li key={league.league.id}>
               <button onClick={() => handleLeagueClick(league.league.id)}>
+                <img
+                  src={`https://media.api-sports.io/football/leagues/${league.league.id}.png`}
+                  alt={`${league.league.name} logo`}
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    objectFit: "contain",
+                  }}
+                />
+                <br />
                 {league.league.name}
               </button>
               {selectedLeague === league.league.id && (
